@@ -40,5 +40,3 @@ export async function deletePostById(id: string) {
   });
   return post;
 }
-
-
