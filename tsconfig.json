@@ -108,5 +108,5 @@
   },
   "include": [
     "src/**/*"
-, "routes.ts", "src/index.ts"  ],
+, "routes.ts", "app.ts"  ],
 }

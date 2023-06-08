@@ -8,22 +8,6 @@ import {
   deleteUserById,
 } from './user.service';
 
-export async function createUserHandler(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
-  const data = req.body;
-
-  try {
-    const user = await createUser(data);
-
-    return res.json(user);
-  } catch (error) {
-    return next(error);
-  }
-}
-
 export async function getAllUsersHandler(req: Request, res: Response) {
   const users = await getAllUsers();
 
@@ -49,6 +33,24 @@ export async function getUserByIdHandler(
     return next(error);
   }
 }
+
+
+export async function createUserHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const data = req.body;
+
+  try {
+    const user = await createUser(data);
+
+    return res.json(user);
+  } catch (error) {
+    return next(error);
+  }
+}
+
 
 export async function updateUserByIdHandler(
   req: Request,
